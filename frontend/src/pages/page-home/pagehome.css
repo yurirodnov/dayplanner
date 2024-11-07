@@ -1,0 +1,35 @@
+.welcome-block {
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: rgb(194, 143, 242); */
+}
+
+.description {
+  margin-top: 70px;
+  font-size: 1.2em;
+}
+
+.description div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.welcome-block .create-plan {
+  width: auto;
+  position: relative;
+  background-color: rgb(81, 3, 154);
+  color: azure;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+  top: 100px;
+}
+
+.welcome-block .create-plan:hover {
+  cursor: pointer;
+  background-color: rgb(72, 2, 138);
+}
