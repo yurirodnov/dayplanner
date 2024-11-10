@@ -1,0 +1,1 @@
+export { isUserAuthorised } from "./authState";
