@@ -44,9 +44,6 @@ export const PagePlan: FC = () => {
         <button>Добавить задачу</button>
       </div>
     )
-
   }
-
-
 }
 
