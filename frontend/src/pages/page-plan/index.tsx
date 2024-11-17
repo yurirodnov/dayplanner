@@ -29,9 +29,7 @@ export const PagePlan: FC = () => {
   } else {
     return (
       <div className="planning-block">
-        <div className="not-authorised-block">
-          <p>Войдите или зарегистрируйтесь, чтобы управлять задачами</p>
-        </div>
+
 
         <div className="no-task-block">
           <div><h1>Пока ни одной задачи на день...</h1></div>

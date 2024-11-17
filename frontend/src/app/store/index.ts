@@ -1,1 +1,1 @@
-export { isUserAuthorised } from "./authState";
+export { isUserAuthorised } from "./isAuthState";
