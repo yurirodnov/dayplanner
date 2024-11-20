@@ -15,21 +15,11 @@ export const PagePlan: FC = () => {
           <p>Войдите или зарегистрируйтесь, чтобы управлять задачами</p>
         </div>
 
-        {/* <div className="no-task-block">
-          <div><h1>Пока ни одной задачи на день...</h1></div>
-
-          <img className="sleep-svg" src={sleep} style={{ width: "90px" }} />
-        </div>
-
-        <div className="tasks-block"></div>
-
-        <button>Добавить задачу</button> */}
       </div>
     )
   } else {
     return (
       <div className="planning-block">
-
 
         <div className="no-task-block">
           <div><h1>Пока ни одной задачи на день...</h1></div>
@@ -37,7 +27,9 @@ export const PagePlan: FC = () => {
           <img className="sleep-svg" src={sleep} style={{ width: "90px" }} />
         </div>
 
-        <div className="tasks-block"></div>
+        <div className="tasks-block">
+
+        </div>
 
         <button>Добавить задачу</button>
       </div>
