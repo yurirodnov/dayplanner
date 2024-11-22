@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ModalAuthorisation } from "../modal-authorisation/ModalAuthorisation";
-import { UserEnter } from "../user-enter";
-import target from "../../assets/icons/target.svg"
+import { ModalAuthorisation } from "../../modal-authorisation/ModalAuthorisation";
+import { UserEnter } from "../../user-enter";
+import target from "../../../assets/icons/target.svg"
 import "./header.css";
 
 export const Header = () => {
@@ -12,7 +12,6 @@ export const Header = () => {
 
       <nav>
         <ul>
-
           <Link to={"/plan"}><li>Планирование</li></Link>
           <Link to={"/useful"}><li>Полезное</li></Link>
         </ul>
