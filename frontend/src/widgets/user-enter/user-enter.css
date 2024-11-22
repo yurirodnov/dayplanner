@@ -1,0 +1,17 @@
+.user-enter-block {
+  display: flex;
+  gap: 10px;
+}
+
+.user-enter-block button {
+  background-color: rgb(81, 3, 154);
+  color: azure;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+}
+
+.user-enter-block button:hover {
+  cursor: pointer;
+  background-color: rgb(72, 2, 138);
+}
