@@ -10,9 +10,9 @@ export const PagePlan: FC = () => {
 
   if (isAuthorised) {
     return (
-      <div className="planning-block">
+      <div className={styles["planning-block"]}>
 
-        <div className="no-task-block">
+        <div className={styles["no-task-block"]}>
           <div><h1>Пока ни одной задачи на день...</h1></div>
 
           <img className="sleep-svg" src={sleep} style={{ width: "90px" }} />
