@@ -17,7 +17,7 @@ export const PageHome = () => {
       </div>
 
 
-      {/* <Link to={"/plan"} className="welcome-block create-plan">Создать план на день</Link> */}
+
 
     </div>
   )

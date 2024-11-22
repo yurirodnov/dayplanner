@@ -8,16 +8,7 @@ import "./pageplan.css";
 export const PagePlan: FC = () => {
   const isAuthorised = isUserAuthorised.get();
 
-  if (!isAuthorised) {
-    return (
-      <div className="planning-block">
-        <div className="not-authorised-block">
-          <p>Войдите или зарегистрируйтесь, чтобы управлять задачами</p>
-        </div>
-
-      </div>
-    )
-  } else {
+  if (isAuthorised) {
     return (
       <div className="planning-block">
 
@@ -32,6 +23,16 @@ export const PagePlan: FC = () => {
         </div>
 
         <button>Добавить задачу</button>
+      </div>
+    )
+
+
+  } else {
+    return (
+      <div className="planning-block">
+        <div className="not-authorised-block">
+          <p>Войдите или зарегистрируйтесь, чтобы управлять задачами</p>
+        </div>
       </div>
     )
   }

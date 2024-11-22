@@ -1,17 +1,20 @@
-import React from "react";
+import React, { FC } from "react";
 import { Routes, Route } from "react-router";
 import { PageHome } from "../../../pages/page-home";
 import { PagePlan } from "../../../pages/page-plan";
-import { PageArticles } from "../../../pages/page-articles";
+import { PageArticles } from "../../../pages/page-articles/ui";
+import { PageStats } from "../../../pages/page-stats/ui";
 
 
 
-export const Routing = () => {
+
+export const Routing: FC = () => {
   return (
     <Routes>
       <Route path="/" element={<PageHome />} />
       <Route path="/plan" element={<PagePlan />} />
       <Route path="/useful" element={<PageArticles />} />
+      <Route path="/stats" element={<PageStats />} />
     </Routes>
   )
 }
