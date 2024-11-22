@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import { isUserAuthorised } from "../../app/store";
-import sleep from "../../assets/icons/sleep.svg"
-import "./pageplan.css";
+import { isUserAuthorised } from "../../../app/store";
+import sleep from "../../../assets/icons/sleep.svg"
+import * as styles from "./styles.module.css";
 
 
 
@@ -22,7 +22,7 @@ export const PagePlan: FC = () => {
 
         </div>
 
-        <button>Добавить задачу</button>
+        <button className={styles["button-add-task"]}>Добавить задачу</button>
       </div>
     )
 

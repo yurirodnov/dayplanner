@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Routes, Route } from "react-router";
-import { PageHome } from "../../../pages/page-home";
-import { PagePlan } from "../../../pages/page-plan";
+import { PageHome } from "../../../pages/page-home/ui";
+import { PagePlan } from "../../../pages/page-plan/ui";
 import { PageArticles } from "../../../pages/page-articles/ui";
 import { PageStats } from "../../../pages/page-stats/ui";
 
