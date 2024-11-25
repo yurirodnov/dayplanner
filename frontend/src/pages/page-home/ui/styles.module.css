@@ -4,7 +4,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 55px;
   /* background-color: rgb(194, 143, 242); */
+}
+
+.welcome-block-heading {
+  font-size: 36px;
 }
 
 .description {
@@ -12,10 +17,10 @@
   font-size: 1.2em;
 }
 
-.description div {
+.welcome-block-description-point {
   display: flex;
-  align-items: center;
   gap: 10px;
+  font-size: 1.3em;
 }
 
 .welcome-block .create-plan {
