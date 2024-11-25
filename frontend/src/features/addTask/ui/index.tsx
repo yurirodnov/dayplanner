@@ -1,4 +1,5 @@
 import React from "react";
+import { useHookstate } from "@hookstate/core";
 import { isAddTaskModalOpen } from "../model/addTaskModalState";
 import { closeAddTaskModalHandler } from "../model/addTaskModalHandlers";
 import * as styles from "./styles.module.css";
@@ -9,7 +10,9 @@ import * as styles from "./styles.module.css";
 export const AddTask = () => {
   console.log(`Current modal state is ${isAddTaskModalOpen.get()}`)
 
-  const isModalOpen = isAddTaskModalOpen.get() ? "modal-grey-background" : "modal-grey-background-none";
+  const currentModalState = useHookstate(isAddTaskModalOpen)
+
+  const isModalOpen = currentModalState.get() ? "modal-grey-background" : "modal-grey-background-none";
 
 
   return (
