@@ -1,1 +1,1 @@
-Create plan for day, be effective and succesful :D
+Create plan for day, be effective and succesful😁
