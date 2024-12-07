@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ModalAuthorisation } from "../../modal-authorisation/ModalAuthorisation";
+// import { ModalAuthorisation } from "../../modal-authorisation/ModalAuthorisation";
 import { UserEnter } from "../../user-enter";
 import { isUserAuthorised } from "../../../app/store/isAuthState";
 import target from "../../../assets/icons/target.svg"
