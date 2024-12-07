@@ -1,4 +1,4 @@
-.modal-grey-background {
+.modalGreyBackground {
   left: 0;
   top: 0;
   position: fixed;
@@ -11,7 +11,7 @@
   z-index: 999;
 }
 
-.modal-grey-background-none {
+.modalGreyBackgroundNone {
   display: none;
   left: 0;
   top: 0;
@@ -24,7 +24,7 @@
   z-index: 999;
 }
 
-.modal-window {
+.modalWindow {
   width: 60%;
   background-color: white;
   border: 1px solid black;
@@ -34,13 +34,13 @@
   gap: 15px;
 }
 
-.modal-window-form {
+.modalWindowForm {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.modal-window-buttons {
+.modalWindowButtons {
   display: flex;
   gap: 15px;
 }
