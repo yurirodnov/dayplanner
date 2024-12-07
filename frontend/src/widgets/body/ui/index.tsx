@@ -1,10 +1,10 @@
 import React from "react";
-import { Routing } from "../../app/providers/router";
+import { Routing } from "../../../app/providers/router";
 import * as styles from "./body.module.css"
 
 
 
-const Body = () => {
+export const Body = () => {
   return (
     <div className={styles.wrapper}>
       <Routing />
@@ -14,4 +14,3 @@ const Body = () => {
 }
 
 
-export { Body };

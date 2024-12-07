@@ -32,7 +32,6 @@ export const PagePlan: FC = () => {
 
     )
 
-
   } else {
     return (
       <div className="planning-block">

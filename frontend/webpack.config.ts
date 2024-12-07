@@ -36,8 +36,19 @@ export default (env: EnvVariables) => {
           use: ['style-loader', {
             loader: 'css-loader',
             options: {
-              modules: true,
+              modules: {
+                mode: "local",
+                auto: true,
+                exportGlobals: true,
+                localIdentName: "[name]__[local]__[hash:base64:5]",
+                localIdentContext: path.resolve(__dirname, "src"),
+                localIdentHashSalt: "my-custom-hash",
+                namedExport: true,
+                exportLocalsConvention: "camelCase",
+                exportOnlyLocals: false,
+              },
             },
+
           },],
           exclude: /node_modules/,
         },
