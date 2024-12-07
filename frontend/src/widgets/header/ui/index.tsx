@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 import { UserEnter } from "../../user-enter";
 import { isUserAuthorised } from "../../../app/store/isAuthState";
 import target from "../../../assets/icons/target.svg"
-import "./header.css";
+import * as styles from "./header.module.css";
 
 export const Header = () => {
   const isAuthorised = isUserAuthorised.get();
 
   return (
-    <div className="header">
-      <Link to={"/"}><div className="logo">Dayplanner<img src={target} style={{ width: "40px" }} /></div></Link>
+    <div className={styles.header}>
+      <Link to={"/"}><div className={styles.logo}>Dayplanner<img src={target} style={{ width: "40px" }} /></div></Link>
 
-      <nav>
+      <nav className={styles.navigation}>
         <ul>
           <Link to={"/plan"}><li>Планирование</li></Link>
           <Link to={"/useful"}><li>Полезное</li></Link>

@@ -1,12 +1,12 @@
 import React from "react";
 import { Routing } from "../../app/providers/router";
-import "./body.css"
+import * as styles from "./body.module.css"
 
 
 
 const Body = () => {
   return (
-    <div className="wrapper">
+    <div className={styles.wrapper}>
       <Routing />
     </div>
 
