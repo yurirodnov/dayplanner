@@ -1,9 +1,4 @@
-.user-enter-block {
-  display: flex;
-  gap: 10px;
-}
-
-.user-enter-block button {
+.userRegistrationButton {
   background-color: rgb(81, 3, 154);
   color: azure;
   padding: 15px;
@@ -11,7 +6,7 @@
   border-radius: 15px;
 }
 
-.user-enter-block button:hover {
+.userRegistrationButton:hover {
   cursor: pointer;
   background-color: rgb(72, 2, 138);
 }

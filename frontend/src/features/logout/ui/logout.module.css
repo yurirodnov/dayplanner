@@ -1,0 +1,12 @@
+.userEnterBlockButton {
+  background-color: rgb(81, 3, 154);
+  color: azure;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+}
+
+.userEnterBlockButton:hover {
+  cursor: pointer;
+  background-color: rgb(72, 2, 138);
+}

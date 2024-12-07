@@ -1,0 +1,6 @@
+.userEnterBlock {
+  position: relative;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
