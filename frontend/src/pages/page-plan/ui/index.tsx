@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { openAddTaskModalHandler } from "../../../features/addTask/model";
 import { isUserAuthorised } from "../../../app/store";
+
 import sleep from "../../../assets/icons/sleep.svg"
 import * as styles from "./styles.module.css";
 
@@ -24,7 +25,11 @@ export const PagePlan: FC = () => {
 
           </div>
 
+
+
           <button className={styles["button-add-task"]} onClick={openAddTaskModalHandler}>Добавить задачу</button>
+
+
         </div>
 
 
