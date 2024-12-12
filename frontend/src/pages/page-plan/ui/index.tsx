@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { openAddTaskModalHandler } from "../../../features/addTask/model";
+import { openAddTaskModalHandler } from "../../../features/add-task/model";
 import { isUserAuthorised } from "../../../app/store";
 
 import sleep from "../../../assets/icons/sleep.svg"

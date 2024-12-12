@@ -1,1 +1,1 @@
-export * from "./task-list/model/types"
+export * from "./task-list/model/task-list-types"
