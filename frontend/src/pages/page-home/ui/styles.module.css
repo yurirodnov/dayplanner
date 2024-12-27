@@ -1,4 +1,4 @@
-.welcome-block {
+.welcomeBlock {
   width: 800px;
   display: flex;
   justify-content: center;
@@ -8,22 +8,24 @@
   /* background-color: rgb(194, 143, 242); */
 }
 
-.welcome-block-heading {
+.welcomeBlockHeading {
   font-size: 36px;
 }
 
-.description {
-  margin-top: 70px;
-  font-size: 1.2em;
+.welcomeBlockDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-.welcome-block-description-point {
+.welcomeBlockDescriptionPoint {
   display: flex;
   gap: 10px;
   font-size: 1.3em;
 }
 
-.welcome-block .create-plan {
+/* .welcomeBlock .create-plan {
   width: auto;
   position: relative;
   background-color: rgb(81, 3, 154);
@@ -34,7 +36,7 @@
   top: 100px;
 }
 
-.welcome-block .create-plan:hover {
+.welcomeBlock .create-plan:hover {
   cursor: pointer;
   background-color: rgb(72, 2, 138);
-}
+} */

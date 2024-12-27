@@ -5,14 +5,14 @@ import * as styles from "./styles.module.css";
 
 export const PageHome: FC = () => {
   return (
-    <div className={styles["welcome-block"]}>
+    <div className={styles.welcomeBlock}>
 
-      <h1 className={styles["welcome-block-heading"]}>Добро пожаловать в планировщик дня!</h1>
+      <h1 className={styles.welcomeBlockHeading}>Добро пожаловать в Dayplanner!</h1>
 
-      <div className="welcome-block description">
-        <div className={styles["welcome-block-description-point"]}><p>Ставьте задачи</p><img src={check} style={{ width: "20px" }} /></div>
-        <div className={styles["welcome-block-description-point"]}><p>Достигайте целей</p><img src={check} style={{ width: "20px" }} /></div>
-        <div className={styles["welcome-block-description-point"]}><p>Отслеживайте результат</p><img src={check} style={{ width: "20px" }} /></div>
+      <div className={styles.welcomeBlockDescription}>
+        <div className={styles.welcomeBlockDescriptionPoint}><p>Ставьте задачи</p><img src={check} style={{ width: "20px" }} /></div>
+        <div className={styles.welcomeBlockDescriptionPoint}><p>Достигайте целей</p><img src={check} style={{ width: "20px" }} /></div>
+        <div className={styles.welcomeBlockDescriptionPoint}><p>Отслеживайте результат</p><img src={check} style={{ width: "20px" }} /></div>
 
       </div>
 
