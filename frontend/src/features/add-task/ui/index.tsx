@@ -16,19 +16,19 @@ export const AddTask = () => {
         <h3>Добавить задачу</h3>
         <form className={styles.modalWindowForm}>
           <label htmlFor="task-name">Что планируете сделать:</label>
-          <input type="text" id="task-name" />
+          <input type="text" id="task-name" className={styles.inputTaskName} />
           <label htmlFor="priority-select">Приоритет задачи:</label>
-          <select name="priority" id="task-priority-select">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-          </select>
+          <div className={styles.selectTaskPriority}>
+            <div className={styles.taskPriorityLow} title="Низкий"></div>
+            <div className={styles.taskPriorityMedium} title="Средний"></div>
+            <div className={styles.taskPriorityHigh} title="Высокий"></div>
+          </div>
           <label htmlFor="task-description">Описание задачи:</label>
-          <textarea name="textarea" id="task-description"></textarea>
+          <textarea name="textarea" id="task-description" className={styles.textAreaTaskDescription} ></textarea>
         </form>
         <div className={styles.modalWindowButtons}>
-          <button>Добавить</button>
-          <button onClick={closeAddTaskModalHandler}>Отмена</button>
+          <button className={styles.addTaskButton}>Добавить</button>
+          <button onClick={closeAddTaskModalHandler} className={styles.cancelButton}>Отмена</button>
         </div>
       </div>
     </div >

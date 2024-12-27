@@ -1,3 +1,7 @@
+:root {
+  --input-border: 1px solid #cbcbcb;
+}
+
 .modalGreyBackground {
   left: 0;
   top: 0;
@@ -25,13 +29,13 @@
 }
 
 .modalWindow {
-  width: 60%;
+  width: 40%;
   background-color: white;
-  border: 1px solid black;
   padding: 15px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
+  border-radius: 10px;
 }
 
 .modalWindowForm {
@@ -40,7 +44,85 @@
   gap: 15px;
 }
 
+.inputTaskName {
+  border-radius: 5px;
+  border: var(--input-border);
+  padding: 5px;
+  outline: none;
+}
+
+.selectTaskPriority {
+  width: auto;
+  display: flex;
+  gap: 20px;
+}
+
+.selectTaskPriority div {
+  border: 1px solid black;
+}
+
+.selectTaskPriority div:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.taskPriorityLow {
+  background-color: green;
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+}
+
+.taskPriorityMedium {
+  background-color: yellow;
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+}
+
+.taskPriorityHigh {
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+}
+
+.textAreaTaskDescription {
+  height: 100px;
+  border-radius: 5px;
+  border: var(--input-border);
+  padding: 5px;
+  outline: none;
+  resize: none;
+}
+
 .modalWindowButtons {
   display: flex;
   gap: 15px;
+}
+
+.addTaskButton {
+  background-color: rgb(81, 3, 154);
+  color: azure;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+}
+
+.addTaskButton:hover {
+  cursor: pointer;
+  background-color: rgb(72, 2, 138);
+}
+
+.cancelButton {
+  background-color: rgb(81, 3, 154);
+  color: azure;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+}
+
+.cancelButton:hover {
+  cursor: pointer;
+  background-color: rgb(72, 2, 138);
 }
