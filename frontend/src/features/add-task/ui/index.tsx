@@ -1,18 +1,18 @@
 import React from "react";
 import { useHookstate } from "@hookstate/core";
 import { isAddTaskModalOpen } from "../model/addTaskModalState";
-import { closeAddTaskModalHandler } from "../model/addTaskModalHandlers";
+import { closeAddTaskModalHandler, closeAddTaskModalHandlerEsc } from "../model/addTaskModalHandlers";
 import * as styles from "./styles.module.css";
 
 export const AddTask = () => {
-  console.log(`Current modal state is ${isAddTaskModalOpen.get()}`)
+  // console.log(`Current modal state is ${isAddTaskModalOpen.get()}`)
   const currentModalState = useHookstate(isAddTaskModalOpen)
   const isModalOpen = currentModalState.get();
 
 
   return (
-    <div className={isModalOpen ? styles.modalGreyBackground : styles.modalGreyBackgroundNone}>
-      <div className={styles.modalWindow}>
+    <div className={isModalOpen ? styles.modalGreyBackground : styles.modalGreyBackgroundNone} >
+      <div className={styles.modalWindow} >
         <h3>Добавить задачу</h3>
         <form className={styles.modalWindowForm}>
           <label htmlFor="task-name">Что планируете сделать:</label>

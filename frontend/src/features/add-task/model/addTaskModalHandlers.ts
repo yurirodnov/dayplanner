@@ -10,3 +10,11 @@ export const closeAddTaskModalHandler = () => {
   isAddTaskModalOpen.set(false)
   console.log(isAddTaskModalOpen.get())
 }
+
+export const closeAddTaskModalHandlerEsc = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  console.log(e)
+  if (e.key === "Escape") {
+    isAddTaskModalOpen.set(false)
+  }
+
+}
