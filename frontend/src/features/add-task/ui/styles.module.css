@@ -45,7 +45,7 @@
 }
 
 .inputTaskName {
-  border-radius: 5px;
+  border-radius: 10px;
   border: var(--input-border);
   padding: 5px;
   outline: none;
@@ -57,39 +57,16 @@
   gap: 20px;
 }
 
-.selectTaskPriority div {
-  border: 1px solid black;
-}
-
-.selectTaskPriority div:hover {
-  border: 1px solid black;
-  cursor: pointer;
-}
-
-.taskPriorityLow {
-  background-color: green;
-  width: 20px;
-  height: 20px;
-  border-radius: 30px;
-}
-
-.taskPriorityMedium {
-  background-color: yellow;
-  width: 20px;
-  height: 20px;
-  border-radius: 30px;
-}
-
-.taskPriorityHigh {
-  background-color: red;
-  width: 20px;
-  height: 20px;
-  border-radius: 30px;
+.selectTaskPriorityOption {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
 }
 
 .textAreaTaskDescription {
   height: 100px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: var(--input-border);
   padding: 5px;
   outline: none;

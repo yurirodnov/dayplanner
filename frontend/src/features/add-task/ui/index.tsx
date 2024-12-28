@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHookstate } from "@hookstate/core";
 import { isAddTaskModalOpen } from "../model/addTaskModalState";
 import { closeAddTaskModalHandler, closeAddTaskModalHandlerEsc } from "../model/addTaskModalHandlers";
@@ -8,6 +8,11 @@ export const AddTask = () => {
   // console.log(`Current modal state is ${isAddTaskModalOpen.get()}`)
   const currentModalState = useHookstate(isAddTaskModalOpen)
   const isModalOpen = currentModalState.get();
+
+  useEffect(() => {
+    document.addEventListener('keyup', () => closeAddTaskModalHandlerEsc)
+  }, [])
+
 
 
   return (
@@ -19,9 +24,19 @@ export const AddTask = () => {
           <input type="text" id="task-name" className={styles.inputTaskName} />
           <label htmlFor="priority-select">Приоритет задачи:</label>
           <div className={styles.selectTaskPriority}>
-            <div className={styles.taskPriorityLow} title="Низкий"></div>
-            <div className={styles.taskPriorityMedium} title="Средний"></div>
-            <div className={styles.taskPriorityHigh} title="Высокий"></div>
+            <div className={styles.selectTaskPriorityOption}>
+              <input type="radio" name="priority" id="priority-low" />
+              <label htmlFor="priority-low">Низкий</label>
+            </div>
+            <div className={styles.selectTaskPriorityOption}>
+              <input type="radio" name="priority" id="priority-medium" />
+              <label htmlFor="priority-medium">Средний</label>
+            </div>
+            <div className={styles.selectTaskPriorityOption}>
+              <input type="radio" name="priority" id="priority-high" />
+              <label htmlFor="priority-high">Высокий</label>
+            </div>
+
           </div>
           <label htmlFor="task-description">Описание задачи:</label>
           <textarea name="textarea" id="task-description" className={styles.textAreaTaskDescription} ></textarea>
@@ -30,7 +45,7 @@ export const AddTask = () => {
           <button className={styles.addTaskButton}>Добавить</button>
           <button onClick={closeAddTaskModalHandler} className={styles.cancelButton}>Отмена</button>
         </div>
-      </div>
+      </div >
     </div >
   )
 }
