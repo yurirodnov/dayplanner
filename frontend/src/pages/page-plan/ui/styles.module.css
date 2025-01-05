@@ -1,7 +1,7 @@
-.planning-block {
+.planningBlock {
   width: 800px;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
 }
@@ -12,25 +12,7 @@
   align-items: center;
   gap: 25px;
 }
-.button-add-task {
-  background-color: rgb(81, 3, 154);
-  color: azure;
-  padding: 15px;
-  border: none;
-  border-radius: 15px;
-}
 
-.button-add-task:hover {
-  cursor: pointer;
-  background-color: rgb(72, 2, 138);
-}
-
-.planning-block div {
+/* .planningBlock div {
   margin-top: 50px;
-}
-
-.sleep-svg {
-  position: relative;
-  top: 50px;
-  margin-bottom: 100px;
-}
+} */

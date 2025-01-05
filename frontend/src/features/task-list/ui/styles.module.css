@@ -1,0 +1,19 @@
+.taskListWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.taskListForm {
+  display: flex;
+}
+
+.taskExample {
+  display: flex;
+}
+
+.taskList {
+}
+
+.taskPriorityBlock {
+  display: flex;
+}
