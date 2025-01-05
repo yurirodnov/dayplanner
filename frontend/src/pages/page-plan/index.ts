@@ -1,1 +1,1 @@
-export * from "./ui"
+export { PagePlan } from "./ui/"

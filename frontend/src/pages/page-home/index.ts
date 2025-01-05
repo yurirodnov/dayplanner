@@ -1,1 +1,1 @@
-export * from "./ui/index"
+export { PageHome } from "./ui/index"

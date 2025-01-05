@@ -1,7 +1,6 @@
 import React, { FC } from "react";
-import { openAddTaskModalHandler } from "../../../features/add-task/model";
+// import { openAddTaskModalHandler } from "../../../features/add-task/model";
 import { isUserAuthorised } from "../../../app/store";
-
 import sleep from "../../../assets/icons/sleep.svg"
 import * as styles from "./styles.module.css";
 
@@ -24,17 +23,9 @@ export const PagePlan: FC = () => {
           <div className="tasks-block">
 
           </div>
-
-
-
-          <button className={styles["button-add-task"]} onClick={openAddTaskModalHandler}>Добавить задачу</button>
-
-
+          {/* <button className={styles["button-add-task"]} onClick={openAddTaskModalHandler}>Добавить задачу</button> */}
         </div>
-
-
       </>
-
     )
 
   } else {
