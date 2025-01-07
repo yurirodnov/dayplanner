@@ -1,14 +1,66 @@
 .taskListWrapper {
   display: flex;
   flex-direction: column;
+  gap: 100px;
+  width: 100%;
+  padding: 30px 0;
 }
 
 .taskListForm {
   display: flex;
+  gap: 15px;
+  align-items: center;
 }
 
-.taskExample {
+.taskFormInput {
   display: flex;
+  flex-grow: 1;
+  padding: 15px;
+  border: 1px solid rgb(181, 181, 181);
+  border-radius: 10px;
+  outline: none;
+}
+
+.taskCard {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 15px;
+}
+
+.done {
+  text-decoration: line-through;
+  text-decoration-color: red;
+}
+
+.taskPriorityBlock {
+  display: flex;
+  gap: 15px;
+}
+
+.taskPriority {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.high {
+  background-color: red;
+}
+
+.medium {
+  background-color: rgb(255, 208, 0);
+}
+
+.low {
+  background-color: green;
+}
+
+.high,
+.medium,
+.low:hover {
+  cursor: pointer;
 }
 
 .taskList {
@@ -16,4 +68,40 @@
 
 .taskPriorityBlock {
   display: flex;
+}
+
+.taskPriority {
+}
+
+.taskButton {
+  background-color: rgb(81, 3, 154);
+  color: azure;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+}
+
+.taskButton:hover {
+  position: relative;
+  cursor: pointer;
+  background-color: rgb(72, 2, 138);
+}
+
+.taskButton {
+  position: relative;
+  background-color: rgb(81, 3, 154);
+  color: azure;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+}
+
+.taskButton:active {
+  position: relative;
+  top: 1px;
+  cursor: pointer;
+  background-color: rgb(72, 2, 138);
+}
+
+.taskCardCheck {
 }
