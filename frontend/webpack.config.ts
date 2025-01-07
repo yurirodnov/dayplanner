@@ -2,6 +2,7 @@ import path from "path";
 import webpack from "webpack";
 import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import 'webpack-dev-server';
 
 
@@ -28,12 +29,12 @@ export default (env: EnvVariables) => {
         },
         {
           test: /\.css$/i,
-          use: ['style-loader', 'css-loader'],
+          use: [MiniCssExtractPlugin.loader, 'css-loader'],
           exclude: /\.module\.css$/i,
         },
         {
           test: /\.module.css$/i,
-          use: ['style-loader', {
+          use: [MiniCssExtractPlugin.loader, {
             loader: 'css-loader',
             options: {
               modules: {
@@ -89,7 +90,10 @@ export default (env: EnvVariables) => {
     plugins: [new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public", "index.html"),
       filename: "index.html",
-    })],
+
+    }), new MiniCssExtractPlugin({
+      filename: 'styles.css',
+    }),],
 
 
   }
