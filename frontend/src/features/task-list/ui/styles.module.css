@@ -108,3 +108,7 @@
 
 .taskCardCheck {
 }
+
+input[type="radio"] {
+  display: none;
+}

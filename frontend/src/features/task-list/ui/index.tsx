@@ -1,25 +1,54 @@
 import React from "react";
+import { useState } from "react";
 import { taskListState } from "../model/taskListState";
-import * as styles from "./styles.module.css"
+import { useHookstate } from "@hookstate/core";
+import { changeTaskStatus, addNewTaskToState } from "../model/taskListState";
 import { Task } from "src/entities/task";
-import { useHookstate, State } from "@hookstate/core";
-import { changeTaskStatus } from "../model/taskListState";
-// import { useGlobalState } from "../model/taskListState";
+import * as styles from "./styles.module.css"
+
 
 
 export const TaskList: React.FC = () => {
 
-
   const state = useHookstate(taskListState);
 
+  const [newTask, setNewTask] = useState<string>("");
+  const [newTaskPriority, setPriority] = useState<string>("1");
 
 
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => { }
 
-  const handlePrioritySelect = (): void => { }
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setNewTask(e.target.value)
+  }
 
-  const handleAddTaskButton = (): void => { }
+  const handlePrioritySelect = (e: React.MouseEvent<HTMLLabelElement>): void => {
+    const inputId = e.currentTarget.htmlFor;
+
+    const inputElement = document.getElementById(inputId) as HTMLInputElement;
+
+    if (inputElement) {
+      const selectedPriority = inputElement.dataset.priority;
+      setPriority(selectedPriority)
+    }
+  }
+
+
+
+  const handleAddTask = (): void => {
+
+    const newTaskObject: Task = {
+      id: 0,
+      text: newTask,
+      priority: +newTaskPriority,
+      isDone: false
+    }
+
+
+    addNewTaskToState(newTaskObject, state)
+
+    console.log(newTaskObject)
+  }
 
   const handleChangeTaskStatus = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const selectedTaskText = e.currentTarget.dataset.task;
@@ -37,16 +66,16 @@ export const TaskList: React.FC = () => {
   return (
     <div className={styles.taskListWrapper}>
       <form className={styles.taskListForm}>
-        <input type="text" placeholder="Что планируете сделать?" className={styles.taskFormInput}></input>
+        <input type="text" placeholder="Что планируете сделать?" className={styles.taskFormInput} value={newTask} onChange={handleInputChange}></input>
         <div className={styles.taskPriorityBlock}>
-          <label className={`${styles.taskPriority} ${styles.high}`} title="Высокий приоритет" htmlFor="high-priority"></label>
-          <input type="radio" name="priority" id="high-priority" />
-          <label className={`${styles.taskPriority} ${styles.medium}`} title="Средний приоритет" htmlFor="medium-priority"></label>
-          <input type="radio" name="priority" id="medium-priority" />
-          <label className={`${styles.taskPriority} ${styles.low}`} title="Низкий приоритет" htmlFor="low-priority"></label>
-          <input type="radio" name="priority" id="low-priority" />
+          <label className={`${styles.taskPriority} ${styles.high}`} title="Высокий приоритет" htmlFor="high-priority" onClick={handlePrioritySelect}></label>
+          <input type="radio" name="priority" id="high-priority" data-priority="1" />
+          <label className={`${styles.taskPriority} ${styles.medium}`} title="Средний приоритет" htmlFor="medium-priority" onClick={handlePrioritySelect}></label>
+          <input type="radio" name="priority" id="medium-priority" data-priority="2" />
+          <label className={`${styles.taskPriority} ${styles.low}`} title="Низкий приоритет" htmlFor="low-priority" onClick={handlePrioritySelect}></label>
+          <input type="radio" name="priority" id="low-priority" data-priority="3" />
         </div>
-        <button type="button" className={styles.taskButton}>Добавить</button>
+        <button type="button" className={styles.taskButton} onClick={handleAddTask}>Добавить</button>
       </form >
       <div className={styles.taskList}>
         {state.get().map((task) => (
