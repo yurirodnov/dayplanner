@@ -3,31 +3,20 @@ import { hookstate, useHookstate, State } from '@hookstate/core';
 import { Task } from "../../../entities/task"
 
 
-export const taskListState = hookstate<Task[] | []>([{ id: 1, text: "Доделать Dayplanner", priority: 1, isDone: false }]);
+export const taskListState = hookstate<Task[] | []>([
+  { id: 1, text: "Доделать Dayplanner", priority: 1, isDone: false },
+  { id: 2, text: "Понять Hookstate", priority: 1, isDone: false },
+  { id: 3, text: "Реализовать FSD", priority: 1, isDone: false }
+]);
 
 
-export const changeTaskStatus = (text: string): void => {
-  const tasks = taskListState.get() as Task[];
-
-
-  console.log(text)
-
-  // if (tasks.length !== 0) {
-  //   console.log(tasks.find(task => task.id === id))
-  // }
+export const changeTaskStatus = (text: string, stateInstance: any): void => {
+  const tasks = stateInstance.get() as Task[];
+  const taskToChangeIndex = tasks.findIndex(task => task.text === text);
+  stateInstance[taskToChangeIndex].isDone.get() ? stateInstance[taskToChangeIndex].isDone.set(false) : stateInstance[taskToChangeIndex].isDone.set(true);
 }
 
 
 
 
-
-
-// export const useGlobalState = () => {
-//   const list = useHookstate(taskListState)
-
-
-//   return {
-//     getTaskListLength: () => list.length,
-//   }
-// }
 

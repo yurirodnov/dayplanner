@@ -25,7 +25,7 @@
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  border: 1px solid grey;
+  border: 1px solid rgb(181, 181, 181);
   border-radius: 15px;
 }
 
@@ -64,6 +64,9 @@
 }
 
 .taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .taskPriorityBlock {

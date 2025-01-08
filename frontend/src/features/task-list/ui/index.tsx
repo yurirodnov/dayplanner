@@ -10,8 +10,8 @@ import { changeTaskStatus } from "../model/taskListState";
 export const TaskList: React.FC = () => {
 
 
-  const taskListForRender = useHookstate(taskListState);
-  // const taskListForRender = useGlobalState();
+  const state = useHookstate(taskListState);
+
 
 
 
@@ -21,9 +21,14 @@ export const TaskList: React.FC = () => {
 
   const handleAddTaskButton = (): void => { }
 
-  const handleFinishTaskButton = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleChangeTaskStatus = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const selectedTaskText = e.currentTarget.dataset.task;
+    changeTaskStatus(selectedTaskText, state)
 
-    changeTaskStatus(e.currentTarget.dataset.task)
+    // const tasks = state.get() as Task[];
+    // const taskToChangeIndex = tasks.findIndex(task => task.text === selectedTaskText);
+    // state[taskToChangeIndex].isDone.get() ? state[taskToChangeIndex].isDone.set(false) : state[taskToChangeIndex].isDone.set(true);
+
   }
 
   const handleRemoveTaskButton = (): void => { }
@@ -44,10 +49,10 @@ export const TaskList: React.FC = () => {
         <button type="button" className={styles.taskButton}>Добавить</button>
       </form >
       <div className={styles.taskList}>
-        {taskListForRender.get().map((task) => (
+        {state.get().map((task) => (
           <div className={`${styles.taskCard}`} key={task.id} >
             <div className={`${task.isDone ? styles.done : null}`}>{task.text}</div>
-            <input type="checkbox" onChange={(e) => handleFinishTaskButton(e)} data-task={task.text} />
+            <input type="checkbox" onChange={(e) => handleChangeTaskStatus(e)} data-task={task.text} />
           </div>
         ))}
       </div>
