@@ -24,6 +24,7 @@
 .taskCard {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
   padding: 20px;
   border: 1px solid rgb(181, 181, 181);
   border-radius: 15px;
@@ -32,6 +33,7 @@
 .done {
   text-decoration: line-through;
   text-decoration-color: red;
+  color: grey;
 }
 
 .taskPriorityBlock {
@@ -73,7 +75,9 @@
   display: flex;
 }
 
-.taskPriority {
+.grow {
+  display: flex;
+  flex-grow: 1;
 }
 
 .taskButton {
@@ -106,7 +110,12 @@
   background-color: rgb(72, 2, 138);
 }
 
-.taskCardCheck {
+.check {
+  cursor: pointer;
+}
+
+.garbage {
+  cursor: pointer;
 }
 
 input[type="radio"] {

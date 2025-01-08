@@ -2,7 +2,7 @@ export interface Task {
   id: number
   text: string
   priority: number
-  isDone: boolean
+  completed: boolean
 }
 
 

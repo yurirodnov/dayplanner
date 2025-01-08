@@ -2,8 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { taskListState } from "../model/taskListState";
 import { useHookstate } from "@hookstate/core";
-import { changeTaskStatus, addNewTaskToState } from "../model/taskListState";
+import { changeTaskStatus, addNewTaskToState, removeTaskFromState } from "../model/taskListState";
 import { Task } from "src/entities/task";
+import garbage from "../../../assets/icons/garbage.svg"
 import * as styles from "./styles.module.css"
 
 
@@ -33,21 +34,19 @@ export const TaskList: React.FC = () => {
     }
   }
 
-
-
   const handleAddTask = (): void => {
 
     const newTaskObject: Task = {
-      id: 0,
+      id: state.get().length + 1,
       text: newTask,
       priority: +newTaskPriority,
-      isDone: false
+      completed: false
     }
 
+    if (newTask.length !== 0) {
+      addNewTaskToState(newTaskObject, state)
+    }
 
-    addNewTaskToState(newTaskObject, state)
-
-    console.log(newTaskObject)
   }
 
   const handleChangeTaskStatus = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -56,11 +55,15 @@ export const TaskList: React.FC = () => {
 
     // const tasks = state.get() as Task[];
     // const taskToChangeIndex = tasks.findIndex(task => task.text === selectedTaskText);
-    // state[taskToChangeIndex].isDone.get() ? state[taskToChangeIndex].isDone.set(false) : state[taskToChangeIndex].isDone.set(true);
+    // state[taskToChangeIndex].completed.get() ? state[taskToChangeIndex].completed.set(false) : state[taskToChangeIndex].completed.set(true);
 
   }
 
-  const handleRemoveTaskButton = (): void => { }
+  const handleRemoveTaskButton = (e: React.MouseEvent<HTMLImageElement>): void => {
+    const taskToRemove: string = e.currentTarget.dataset.task;
+
+    removeTaskFromState(state, taskToRemove)
+  }
 
 
   return (
@@ -80,8 +83,9 @@ export const TaskList: React.FC = () => {
       <div className={styles.taskList}>
         {state.get().map((task) => (
           <div className={`${styles.taskCard}`} key={task.id} >
-            <div className={`${task.isDone ? styles.done : null}`}>{task.text}</div>
-            <input type="checkbox" onChange={(e) => handleChangeTaskStatus(e)} data-task={task.text} />
+            <div className={`${task.completed ? styles.done : null} ${styles.grow}`}>{task.text}</div>
+            <input type="checkbox" onChange={(e) => handleChangeTaskStatus(e)} data-task={task.text} className={styles.check} />
+            <img src={garbage} width="20" className={styles.garbage} data-task={task.text} onClick={(e) => handleRemoveTaskButton(e)} />
           </div>
         ))}
       </div>
